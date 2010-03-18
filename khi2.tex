@@ -268,7 +268,7 @@ et \og profils colonnes \fg{}.
 
 L'objectif du test du \chid est de déterminer si les lignes et les
 colonnes d'un tableau croisé (c'est à dire les deux variables
-étudiées) sont indépendantes. Par indépendantes, on veut dire
+étudiées) ne sont pas indépendantes. Par indépendantes, on veut dire
 que le fait d'appartenir à une modalité de la première variable n'a
 pas d'influence sur la modalité d'appartenance de la deuxième
 variable.
@@ -972,7 +972,7 @@ de statistiques durant leurs études. En gros, plus on fait
 d'expériences et plus on observe que les résultats ressemblent à la
 fonction de densité d'une loi normale (ou courbe de Gauss). Le maximum
 semble être atteint pour la valeur 43. Or, on remarquera que les
-effectifs théoriques que nous avons calculé s'élèvent justement à
+effectifs théoriques que nous avons calculés s'élèvent justement à
 43,4. C'est normal, car les effectifs théoriques sont ceux qu'on a la
 plus grande probabilité de trouver sous l'hypothèse d'indépendance.
 
@@ -1307,12 +1307,9 @@ toutes signifient la même chose~:
 \item la probabilité d'obtenir le tableau croisé observé sous
   l'hypothèse d'indépendance des deux variables est d'environ sept
   chances sur cent~;
-\item la probabilité que les lignes et les colonnes du tableau sont
-  indépendantes est d'environ sept chances sur cent~;
 \item si j'affirme à partir du tableau croisé observé que la
   profession exercée a une influence sur le fait d'avoir ou non une
-  brouette, j'ai 7~\% de chances d'avoir tort, et 93~\% de chances
-  d'avoir raison.
+  brouette, j'ai 7~\% de chances d'avoir tort.
 \end{itemize}
 
 Sept chances sur cent de me tromper, c'est beaucoup ou pas~? Là la
@@ -1322,8 +1319,8 @@ significatif, c'est à dire le niveau \og acceptable \fg{} de la
 probabilité de se tromper, est fixé par convention et habitude à
 5~\%. Dans le tableau que nous observons depuis maintenant un bon
 moment, nous sommes donc à la limite~: si on se contente d'appliquer
-mécaniquement le traditionnel seuil de 5~\%, alors on dira qu'il n'y a
-pas de lien statistiquement significatif entre la profession et le
+mécaniquement le traditionnel seuil de 5~\%, alors on ne pourra pas
+rejeter l'hypothèse d'indépendance entre la profession et le
 fait de posséder une brouette. Mais on peut s'accorder davantage de
 souplesse et prendre en compte des résultats jusqu'à 10~\% ou même un
 peu plus\ldots
@@ -1351,10 +1348,10 @@ logiciel approprié.
   que j'ai de me tromper si j'affirme que les deux variables croisées
   ne sont pas indépendantes.
 \item Le seuil de significativité pour le $p$ est par convention fixé
-  à 5~\%, ou 0,05, ou 5 chances sur cent. Si le $p$ est supérieur à ce
-  seuil, c'est-à-dire si on a plus de 5 chances sur 100 de se tromper
-  en disant l'inverse, alors on considère que les deux variables sont
-  indépendantes. Sinon, on considère qu'il y a un lien entre les deux.
+  à 5~\%, ou 0,05, ou 5 chances sur cent. Si le $p$ est inférieur à ce
+  seuil, c'est-à-dire si on a moins de 5 chances sur 100 de se
+  tromper, alors on rejette l'hypothèse d'indépendance et on considère
+  qu'un lien existe entre les deux variables.
 \end{enumerate}
 
 Nous allons maintenant enfin pouvoir sortir de cette partie théorique
@@ -1395,10 +1392,9 @@ aurait obtenu si les variables étaient parfaitement indépendantes, et
 sur le nombre de degrés de liberté du tableau, qui dépend du nombre de
 lignes et de colonnes.
 
-À partir de ces deux données, le test donne une valeur $p$ qui est la
-probabilité que les variables soient indépendantes compte tenu du
-tableau observé, ou encore le nombre de chances de se tromper si on
-dit que les deux variables ne sont pas indépendantes.
+À partir de ces deux données, le test donne une valeur $p$ qui est, le
+nombre de chances de se tromper si on dit que les deux variables ne
+sont pas indépendantes.
 
 
 \section{Valeur du \texorpdfstring{$p$}{p}}
@@ -1538,7 +1534,7 @@ du test.
 
 Il semble parfois contre-intuitif d'imaginer que la manière dont on
 code, découpe ou regroupe une variable en classes ou en modalités
-puisse influencer le sa dépendance ou son indépendance vis-à-vis
+puisse influencer sa dépendance ou son indépendance vis-à-vis
 d'autres variables. Si on tient compte de la manière dont le \chid est
 calculé, cette influence s'explique cependant assez bien~:
 
@@ -1693,13 +1689,13 @@ là je peux en conclure quelque chose.
 Le \chid est donc extrêmement sensible aux effectifs~: plus ceux-ci
 sont élevés, plus le risque de se tromper en rejetant l'hypothèse
 d'indépendance est faible, et donc plus la valeur du $p$ est
-petite. Un \chid non significatif peut donc signifier soit qu'il y a
-indépendance entre les lignes et les colonnes du tableau (dans le cas
-où les pourcentages lignes ou colonnes sont très proches les uns des
-autres), soit qu'il n'y a pas indépendance mais que les effectifs dont
-je dispose ne me permettent pas d'en être sûr statistiquement (dans le
-cas où les pourcentages lignes ou colonnes sont sensiblement
-différents).
+petite. Un \chid non significatif peut donc signifier soit qu'on ne
+peut rejeter l'hypothèse d'indépendance entre les lignes et les
+colonnes du tableau (dans le cas où les pourcentages lignes ou
+colonnes sont très proches les uns des autres), soit qu'il n'y a pas
+indépendance mais que les effectifs dont je dispose ne me permettent
+pas d'en être sûr statistiquement (dans le cas où les pourcentages
+lignes ou colonnes sont sensiblement différents).
 
 
 \section{Le test du \chidpdf ne mesure pas l'intensité de la dépendance}
@@ -1810,7 +1806,7 @@ Au final il n'y a que deux choses à retenir~:
 Tout cela peut sembler compliqué, mais un exemple permettra de mieux
 comprendre de quoi il s'agit. Exemple réel cette fois, tiré toujours
 de l'enquête \textit{Histoire de vie}, et pour lequel nous allons
-croiser la catégorie sociale et le sentiment d'appartenir ou non à une
+croiser la catégorie sociale et le sentiment d'appartenir à une
 classe sociale~:
 
 \begin{table}[H]
@@ -1972,12 +1968,12 @@ voir immédiatement que les employés et les ouvriers ont plus
 fréquemment des visites familiales hebdomadaires, tandis que les
 cadres et les professions intermédiaires en ont moins souvent. On
 remarquera également que le pourcentage est très élevé chez les
-agriculteurs (49,4~\%), mais qu'il n'est pas significatif, sans doute
-du fait d'effectifs trop faibles. On peut également remarquer que les
-cadres ont plus souvent des fréquences de visite intermédiaires
-(plusieurs fois par mois ou par an) tandis que les ouvriers ont plus
-souvent des fréquences de visite \og extrêmes \fg{} (soit hebdomadaires,
-soit exceptionnelles ou inexistantes).
+agriculteurs (49,4~\%), mais que l'écart n'est pas significatif, sans
+doute du fait d'effectifs trop faibles. On peut également remarquer
+que les cadres ont plus souvent des fréquences de visite
+intermédiaires (plusieurs fois par mois ou par an) tandis que les
+ouvriers ont plus souvent des fréquences de visite \og extrêmes \fg{}
+(soit hebdomadaires, soit exceptionnelles ou inexistantes).
 
 Ce type de graphique en mosaïque permet donc de faciliter l'analyse,
 là encore plus particulièrement dans le cas de tableaux croisés avec
@@ -2433,7 +2429,7 @@ l'effectif total du tableau~:
 La correction de continuité de Yates vient du fait que les lois
 statistiques utilisées dans le test du \chid sont par nature continues
 (elles peuvent prendre n'importe quelle valeur, y compris avec plein
-de zéros derrière la virgule) tandis que les effectifs des cases de
+de chiffres derrière la virgule) tandis que les effectifs des cases de
 notre tableau ne peuvent être que des nombres entiers. Ceci peut
 entraîner une surévaluation de la valeur du \chid dans certains cas.
 
@@ -2474,8 +2470,8 @@ La bonne nouvelle est donc que ce test peut s'appliquer quels que
 soient les effectifs théoriques du tableau. La mauvaise nouvelle est
 qu'il est assez gourmand en temps de calcul. C'est la raison pour
 laquelle on le limite en général aux tableaux de dimension 2$\times$2.
-On peut cependant l'appliquer à des tableaux de plus grandes
-dimensions.
+On peut cependant l'appliquer à des tableaux de plus grande
+dimension.
 
 
 \chapter{Aide-mémoire}
@@ -2499,11 +2495,12 @@ indépendantes revient à dire l'une des phrases suivantes~[\pageref{ssec-hypind
 \item les profils colonnes du tableau croisé sont tous identiques.
 \end{itemize}
 
-Le test du \chid vise à déterminer la probabilité d'indépendance des
-lignes et des colonnes de notre tableau.
+Le test du \chid vise à déterminer si l'on peut raisonnablement
+rejeter l'hypothèse d'indépendance des lignes et des colonnes de notre
+tableau.
 
 Pour cela, on commence par calculer les effectifs qu'on observerait si
-les lignes et les colonnes étaient parfaitement indépendants, en
+les lignes et les colonnes étaient parfaitement indépendantes, en
 tenant notamment compte des contraintes sur les marges du
 tableau~[\pageref{ssec-contrmar}]. On obtient ainsi le tableau des
 effectifs théoriques sous l'hypothèse
@@ -2529,11 +2526,10 @@ peut en être faite~[\pageref{ssec-valp}].
       \toprule
       $p$ & \textbf{Interprétation} \\
       \midrule
-      1 & Les deux variables sont parfaitement indépendantes \\
-      0,7 & Les deux variables sont indépendantes \\
-      0,15 & En toute rigueur, on devrait considérer les deux variables
-      comme indépendantes, mais il est possible qu'elles ne le soient
-      pas et que les effectifs sont insuffisants pour le montrer \\
+      0,7 & On ne peut pas rejeter l'hypothèse d'indépendance.\\
+      0,15 & En toute rigueur, on ne devrait pas rejeter l'hypothèse
+      d'indépendance. Mais il est possible que des effectifs plus
+      importants nous le permettrait.\\
       0,05 & Les variables ne sont pas indépendantes au seuil classique de 5~\% \\
       0,0001 & L'hypothèse d'indépendance doit être rejetée, il y a un
       lien entre les deux variables \\
