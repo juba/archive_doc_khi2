@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt,twoside,francais]{report}
+\documentclass[a4paper,10pt,twoside,frenchb]{report}
 \usepackage{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -19,12 +19,11 @@
 \usepackage{varioref}
 \usepackage{amsmath}
 \usepackage{lmodern}
+\usepackage[normalem]{ulem}
 \usepackage[autolanguage]{numprint}
 \usepackage[colorlinks=true,urlcolor=blue,citecolor=magenta]{hyperref}
 
-\FrenchFootnotes
-\AddThinSpaceBeforeFootnotes
-\ThinSpaceInFrenchNumbers
+\frenchbsetup{FrenchFootnotes=true,ThinSpaceInFrenchNumbers=true}
 
 \bibliographystyle{plainnat-fr}
 \renewcommand{\cite}{\citep}
@@ -60,7 +59,7 @@
 \thispagestyle{empty}
 
 %\newpage
-\pagestyle{fancy} 
+\pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
 \fancyhead{}
@@ -213,7 +212,7 @@ personne interrogée~:
     \midrule
     Tractatus Logico-philosophicus &   1 &   15 & 2 \\
     Oui-oui et la voiture jaune  &    \nombre{854} &   2 & \nombre{621} \\
-    \bottomrule  
+    \bottomrule
   \end{tabular}
 \end{center}
 
@@ -230,7 +229,7 @@ laquelle elle appartient. Ce qui nous donne ici~:
     \midrule
     Tractatus Logico-philosophicus &   5,6~\% &   83,3~\% & 11,1~\% & 100~\% \\
     Oui-oui et la voiture jaune  &    57,8~\% &   0,1~\% & 42,0~\% & 100~\% \\
-    \bottomrule  
+    \bottomrule
   \end{tabular}
 \end{center}
 
@@ -252,7 +251,7 @@ appartient. Ce qui nous donne ici~:
     Tractatus Logico-philosophicus &   0,1~\% &   88,2~\% & 0,3~\% \\
     Oui-oui et la voiture jaune  &    99,9~\% &   11,8~\% & 99,7~\%\\
     \textit{Total} & \textit{100~\%} & \textit{100~\%} & \textit{100~\%} \\
-    \bottomrule  
+    \bottomrule
   \end{tabular}
 \end{center}
 
@@ -288,7 +287,7 @@ suivants, qui croisent le genre et le plat préféré~:
       Brocolis vapeur & 10 & 10 \\
       \bottomrule
     \end{tabular}
-  \end{minipage} 
+  \end{minipage}
   \hfill
   \begin{minipage}[c]{.46\linewidth}
     \begin{tabular}[!h]{lrr}
@@ -390,7 +389,7 @@ indépendantes~:
   personnes interrogées. On nomme ce type de variations \textit{biais
     d'échantillonnage}.
 \end{itemize}
-  
+
 Pour mieux comprendre ce qu'est ce biais, reprenons notre exemple
 gastronomique précédent. Imaginons que nous avons une population de
 1000 personnes, 500 hommes et 500 femmes. On sait par ailleurs d'une
@@ -457,7 +456,7 @@ ressembler à l'un des tableaux suivants~:
       Brocolis vapeur & 23 & 24 \\
       \bottomrule
     \end{tabular}
-  \end{minipage} 
+  \end{minipage}
   \hfill
   \begin{minipage}[c]{.46\linewidth}
     \begin{tabular}[!h]{lrr}
@@ -541,7 +540,7 @@ couleurs des cheveux et des n\oe{}ils suivantes~:
       12 & 90 & 18 & 120\\
       \bottomrule
     \end{tabular}
-  \end{minipage} 
+  \end{minipage}
   \hfill
   \begin{minipage}[c]{.30\linewidth}
     \begin{tabular}{rrr}
@@ -623,7 +622,7 @@ suivant~:
       10~\% & 75~\% & 15~\% & 100~\%\\
       \bottomrule
     \end{tabular}
-  \end{minipage} 
+  \end{minipage}
   \hfill
   \begin{minipage}[c]{.30\linewidth}
     \begin{tabular}{rrr}
@@ -979,7 +978,7 @@ plus grande probabilité de trouver sous l'hypothèse d'indépendance.
 
 Soit, voilà une bien jolie courbe. Mais cela ne répond toujours pas à
 notre question de savoir si l'écart que nous avons observé est
-\og important \fg{} ou non. 
+\og important \fg{} ou non.
 
 Pour cela nous pouvons regarder où se trouve l'effectif observé dans
 notre \og vraie \fg{} enquête, c'est-à-dire 37, dans le dernier graphique
@@ -1023,7 +1022,7 @@ significativement plus petite ou significativement plus grande
 cette valeur dans le cas où les deux variables sont indépendantes.
 
 
-\section{\chidpdf partiels et \chidpdf du tableau} 
+\section{\chidpdf partiels et \chidpdf du tableau}
 \label{ssec-chidpartiels}
 
 Nous venons donc de voir comment, par simulation, on pouvait essayer
@@ -1064,7 +1063,7 @@ où le carré d'un nombre est toujours positif\footnote{Le choix de
   faciliter certains calculs.}.
 
 Il reste une deuxième subtilité à prendre en compte, que nous
-comprendrons mieux en regardant directement le tableau~\ref{ecarts}. 
+comprendrons mieux en regardant directement le tableau~\ref{ecarts}.
 Si nous regardons la case des sociologues sans brouette, nous
 constatons un écart de 6,4. Si on regarde celle des archéologues avec
 brouette, on obtient un écart de 3,9. Spontanément on pourrait vouloir
@@ -1158,7 +1157,7 @@ soit\footnote{L'auteur l'affirme d'autant plus facilement qu'elle est
 En fait, la notion de degrés de libertés dans le cas du test du \chid
 d'indépendance d'un tableau croisé signifie que la valeur calculée du
 \chid pour ce tableau doit être rapportée au nombre de colonnes et de
-lignes du tableau en question. 
+lignes du tableau en question.
 
 Pour tenter de comprendre, reprenons une célèbre enquête menée auprès
 de 100 professeurs agrégés, 50 en lettre modernes et 50 en lettres
@@ -1203,7 +1202,7 @@ l'appelait car il écoutait le dernier \textit{Dr. X and the freakin'
 nouvelle traduction de l'\textit{Ancien testament}. Et que du coup
 c'est un autre agrégé de lettres classiques qui a été enquêté, car
 celui-ci avait coupé le son de \textit{Sexy groovy funky girlz} pour
-pouvoir écouter les commentaires du match Lorient - Valenciennes. 
+pouvoir écouter les commentaires du match Lorient - Valenciennes.
 
 Dans le cas de notre deuxième enquête, ceci a une conséquence claire~:
 l'effectif de la case \textit{Lettres classiques} - \textit{Urban
@@ -1219,7 +1218,7 @@ au biais d'échantillonnage.
 
 \paragraph{Version mathématique} D'un point de vue mathématique, cette
 notion de \og plus grande sensibilité au biais d'échantillonnage \fg{} est
-fortement liée aux contraintes sur les marges. 
+fortement liée aux contraintes sur les marges.
 
 Pour essayer de comprendre, regardons le premier tableau~: de par les
 contraintes sur les marges, je sais quels doivent être mes totaux en
@@ -1257,7 +1256,7 @@ Et c'est précisément avec cette formule qu'on calcule le nombre de
 \label{ssec-calcp}
 
 Bien, nous avons désormais d'un côté la valeur du \chid pour notre
-tableau, et de l'autre son nombre de degrés de libertés. 
+tableau, et de l'autre son nombre de degrés de libertés.
 
 Rappelez-vous ce que nous avions fait dans la
 section~\vref{secvarcel}~: nous avions réussi à calculer, pour une
@@ -1299,32 +1298,64 @@ logiciel favori va nous indiquer\footnote{Auparavant les
 d'observer un tel résultat compte tenu de l'hypothèse d'indépendance
 s'élève à 0,0728. C'est le fameux $p$.
 
-Comment interpréter ce $p$~? Plusieurs formulations sont possibles,
-toutes signifient la même chose~:
+\section{Interprétation du $p$}
+
+L'interprétation de ce $p$ n'est pas si simple, et on peut vite lui faire dire
+des choses qu'il ne peut pas dire\footnote{Ce qui était le cas, honte à moi,
+  dans de précédentes versions de ce document...}. En fait il n'y a qu'une
+seule interprétation rigoureuse~:
+
+\begin{quote}
+  \emph{Le $p$, c'est la probabilité d'obtenir une statistique du \chid au
+    moins aussi grande que celle obtenue, sous l'hypothèse d'indépendance des
+    lignes et des colonnes du tableau croisé.}
+\end{quote}
+
+Voilà, c'est tout. 
+
+Bien, mais que fait-on à partir de là~? Et bien la statistique classique propose la
+démarche suivante~: on fixe un seuil à l'avance. Si le $p$ obtenu est
+inférieur à ce seuil, alors on peut rejeter l'hypothèse d'indépendance et
+estimer qu'il y a un lien entre les lignes et les colonnes de mon tableau. Si
+le $p$ obtenu est supérieur à ce seuil, alors on ne peut pas rejeter cette
+hypothèse d'indépendance.
+
+En général, le seuil le plus couramment utilisé est le fameux seuil des 5~\%,
+ou $p=0.05$. 
+
+
+Le test du \chid, c'est donc~:
 
 \begin{itemize}
-\item la probabilité d'observer une valeur du \chid de 5,2402 avec
-  deux degrés de liberté s'élève à 0,0728~;
-\item la probabilité d'obtenir le tableau croisé observé sous
-  l'hypothèse d'indépendance des deux variables est d'environ sept
-  chances sur cent~;
-\item si j'affirme à partir du tableau croisé observé que la
-  profession exercée a une influence sur le fait d'avoir ou non une
-  brouette, j'ai 7~\% de chances d'avoir tort.
+\item se placer sous l'hypothèse d'indépendance des lignes et des colonnes de
+  mon tableau croisé
+\item calculer les effectifs du tableau théorique obtenu sous cette hypothèse
+  d'indépendance
+\item calculer la statistique du \chid du tableau, qui est une mesure de la
+  <<~distance~>> entre le tableau observé et le tableau théorique sous
+  l'hypothès d'indépendance
+\item en déduire (par approximation mathématique ou par simulation) la
+  probabilité $p$ d'obtenir une distance entre les deux tableaux au moins
+  aussi grande que celle obtenue
+\item si le $p$ obtenu est inférieur à un seuil défini à l'avance (en général
+  $p=0,05$), alors on peut rejeter l'hypothèse d'indépendance des lignes et
+  des colonnes
 \end{itemize}
 
-Sept chances sur cent de me tromper, c'est beaucoup ou pas~? Là la
-statistique n'a plus de règle mathématique à fournir. En général, le
-seuil à partir duquel on considère le résultat comme réellement
-significatif, c'est à dire le niveau \og acceptable \fg{} de la
-probabilité de se tromper, est fixé par convention et habitude à
-5~\%. Dans le tableau que nous observons depuis maintenant un bon
-moment, nous sommes donc à la limite~: si on se contente d'appliquer
-mécaniquement le traditionnel seuil de 5~\%, alors on ne pourra pas
-rejeter l'hypothèse d'indépendance entre la profession et le
-fait de posséder une brouette. Mais on peut s'accorder davantage de
-souplesse et prendre en compte des résultats jusqu'à 10~\% ou même un
-peu plus\ldots
+\textit{Et ça n'est rien d'autre que cela~!}
+
+En particulier, les interprétations suivantes du $p$ ne sont \textbf{pas}
+correctes~:
+
+\begin{itemize}
+\item \sout{le $p$, c'est la probabilité de se tromper quand on rejette
+    l'hypothèse d'indépendance. Si $p=0,05$ j'ai donc 5 chances sur 100 de me
+    tromper.}
+\item \sout{le $p$ c'est la probabilité que l'hypothèse d'indépendance soit
+    vraie.}
+\item \sout{si le $p$ est supérieur à 0,5, alors je peux accepter l'hypothèse d'indépendance.}
+\end{itemize}
+
 
 
 \section{En résumé}
@@ -1344,22 +1375,19 @@ logiciel approprié.
 \item Le nombre de degrés de libertés dépend du nombre de lignes et de
   colonnes d'un tableau.
 \item Avec les deux valeurs précédentes, on peut estimer la
-  probabilité $p$ d'obtenir le tableau observé dans le cas où lignes
-  et colonnes sont indépendantes. $p$ représente le nombre de chances
-  que j'ai de me tromper si j'affirme que les deux variables croisées
-  ne sont pas indépendantes.
-\item Le seuil de significativité pour le $p$ est par convention fixé
-  à 5~\%, ou 0,05, ou 5 chances sur cent. Si le $p$ est inférieur à ce
-  seuil, c'est-à-dire si on a moins de 5 chances sur 100 de se
-  tromper, alors on rejette l'hypothèse d'indépendance et on considère
-  qu'un lien existe entre les deux variables.
+  probabilité $p$ d'obtenir un écart au moins aussi grande entre mon tableau
+  observé et le tableau théorique dans le cas où lignes
+  et colonnes sont indépendantes. 
+\item Un seuil de significativité est fixé pour le $p$, par exemple à 0,05. Si
+  le $p$ est inférieur à ce seuil, alors on rejette l'hypothèse d'indépendance
+  et on considère qu'un lien existe entre les deux variables. Sinon, le test
+  ne nous permet pas de rejeter cette hypothèse d'indépendance.
 \end{enumerate}
 
 Nous allons maintenant enfin pouvoir sortir de cette partie théorique
 aussi distrayante que l'observation d'un escargot par temps sec pour
 aborder des exemples plus concrets d'utilisation du test et
 d'interprétation des résultats.
-
 
 
 \chapter{Interprétation}
@@ -1393,10 +1421,13 @@ aurait obtenu si les variables étaient parfaitement indépendantes, et
 sur le nombre de degrés de liberté du tableau, qui dépend du nombre de
 lignes et de colonnes.
 
-À partir de ces deux données, le test donne une valeur $p$ qui est, le
-nombre de chances de se tromper si on dit que les deux variables ne
-sont pas indépendantes.
+À partir de ces deux données, le test donne une valeur $p$ qui est la
+probabilité d'obtenir un écart au moins aussi grand que celui observé sous
+l'hypothèse d'indépendance de mes lignes et de mes colonnes.
 
+Si le $p$ est inférieur à un seuil fixé à l'avance (bien souvent 0,05, ou
+5~\%), on dit que le test est significatif et qu'on peut rejeter l'hypothèse
+d'indépendance des lignes et des colonnes du tableau.
 
 \section{Valeur du \texorpdfstring{$p$}{p}}
 \label{ssec-valp}
@@ -1432,10 +1463,8 @@ postes.
 Le \chid vaut 44,63, le nombre de degrés de libertés est 5, $p$ vaut
 0,00000001726.
 
-On peut donc rejeter l'hypothèse d'indépendance sans crainte,
-puisqu'on n'a qu'une chance sur plus de 57\,000\,000 de se
-tromper\footnote{$\frac{1}{0,00000001726} = 57\,937\,428$, soit quatre
-fois moins de chances que de gagner au Loto.}. La
+On peut donc rejeter l'hypothèse d'indépendance sans crainte, le $p$ est
+extrêmement faible et largement au-dessous du seuil de 0,05. La
 catégorie sociale d'appartenance du père a une influence sur le fait
 d'avoir été ou non élevé par sa mère seule.
 
@@ -1449,7 +1478,7 @@ le sentiment d'appartenir ou non à une classe sociale~:
     \midrule
     Sentiment d'appartenance & 93 & 3921 \\
     Pas de sentiment d'appartenance & 92 & 4165 \\
-    Ne sait pas & 1 & 131 \\ 
+    Ne sait pas & 1 & 131 \\
     \bottomrule
   \end{tabular}
 \end{center}
@@ -1468,7 +1497,7 @@ variables.
 Comme on a déjà eu l'occasion de le souligner\footnote{Mais vous aurez
 remarqué que ce document ne recule pas devant une certaine dose de
 répétitions, mais si celle-ci frise parfois le radotage.}, les
-lignes et les colonnes d'un tableau croisé sont interchangeables. 
+lignes et les colonnes d'un tableau croisé sont interchangeables.
 Vous pouvez donc échanger vos deux variables, le résultat du test
 sera toujours exactement le même.
 
@@ -1596,7 +1625,7 @@ aurions alors obtenu le tableau suivant~:
     \normalsize
   \end{center}
 \end{table}
-  
+
 Avec un \chid plus du tout significatif, puisque le $p$ vaut désormais
 0,49~! En regroupant les classes d'âge, on a regroupé des catégories
 où la préférence pour les séries était sur-représentée et d'autres où
@@ -1635,7 +1664,7 @@ résultats suivants~:
     \end{tabular}
   \end{center}
 \end{table}
-  
+
 Si on fait les pourcentages lignes, on obtient le tableau suivant~:
 
 \begin{table}[H]
@@ -1652,7 +1681,7 @@ Si on fait les pourcentages lignes, on obtient le tableau suivant~:
     \end{tabular}
   \end{center}
 \end{table}
-  
+
 Le \chid de notre tableau n'est pas du tout significatif, avec un $p$
 de 0,459. Fort déçu, le ministère a décidé de renouveler l'enquête
 mais en accordant une rallonge budgétaire qui a permis d'interroger
@@ -1671,7 +1700,7 @@ dix fois plus de personnes, avec les résultats suivants~:
     \end{tabular}
   \end{center}
 \end{table}
-  
+
 Si on calcule les pourcentages lignes de ce nouveau tableau, on
 obtient exactement les mêmes que précédemment, car les effectifs de
 chaque case ont tous été multipliés par 10.
@@ -1688,15 +1717,20 @@ quatre fois \textit{non}, je ne peux rien dire. Mais si j'en interroge
 là je peux en conclure quelque chose.
 
 Le \chid est donc extrêmement sensible aux effectifs~: plus ceux-ci
-sont élevés, plus le risque de se tromper en rejetant l'hypothèse
-d'indépendance est faible, et donc plus la valeur du $p$ est
-petite. Un \chid non significatif peut donc signifier soit qu'on ne
+sont élevés, plus la part de variation dans mon tableau due au biais
+d'échantillonnage est faible. À écarts de répartition équivalents, on aura
+donc une valeur du $p$ plus petite si les effectifs sont plus élevés.
+
+Un \chid non significatif (c'est-à-dire un $p$ supérieur au seuil de
+significativité) peut donc signifier soit qu'on ne
 peut rejeter l'hypothèse d'indépendance entre les lignes et les
 colonnes du tableau (dans le cas où les pourcentages lignes ou
 colonnes sont très proches les uns des autres), soit qu'il n'y a pas
 indépendance mais que les effectifs dont je dispose ne me permettent
 pas d'en être sûr statistiquement (dans le cas où les pourcentages
-lignes ou colonnes sont sensiblement différents).
+lignes ou colonnes sont sensiblement différents). Le test ne nous permet pas
+de trancher entre les deux possibilités, sauf à refaire une enquête avec des
+effectifs plus importants.
 
 
 \section{Le test du \chidpdf ne mesure pas l'intensité de la dépendance}
@@ -1717,7 +1751,7 @@ suivants~:
        Carré & 20 & 10 \\
       \bottomrule
     \end{tabular}
-  \end{minipage} 
+  \end{minipage}
   \hfill
   \begin{minipage}[c]{.46\linewidth}
     \begin{tabular}[!h]{lrr}
@@ -1757,6 +1791,51 @@ forte pour l'un que pour l'autre\footnote{Pour être tout à fait
   calculés exprès pour, comme le $V$ de Cramer, que nous verrons
   section~\vref{sec-vcramer}.}.
 
+Une autre conclusion est qu'avec des effectifs très importants, les \chid des
+tableaux croisés seront quasiment toujours significatifs, puisque même la plus
+petite variation de pourcentages pourra devenir significative.
+
+Repartons de l'exemple croisant calvitie et rhume, et imaginons que nous avons
+interrogé 10\,000\,000 de personnes, avec le résultat suivant~:
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}[!h]{lrr}
+      \toprule
+      & A eu un rhume & N'a pas eu de rhume \\
+      \midrule
+      Totalement chauve & 6\,700\,000 & 3\,300\,000 \\
+      Partiellement chauve & 2\,676\,000 & 1\,324\,000 \\
+      Porte une perruque &  671\,000 & 329\,000 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Si on fait les pourcentages lignes, on obtient le tableau suivant~:
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}[!h]{lrr> {\itshape}r}
+      \toprule
+      & A eu un rhume & N'a pas eu de rhume & Total\\
+      \midrule
+      Totalement chauve & 67,0~\% & 33,0~\% & 100~\%\\
+      Partiellement chauve & 66,9~\% & 33,1~\% & 100~\% \\
+      Porte une perruque & 67,1~\% & 32,9~\% & 100~\% \\
+      \textit{Ensemble} & \textit{67,0~\%} & \textit{33,0~\%} & 100~\% \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Les écarts entre les pourcentages ligne sont extrêmement faibles. Et pourtant,
+on obtient un \chid de 19,894 pour 2 degrés de liberté, soit un $p =
+0.00004786$, très largement en-dessous du seuil de 5~\%. Les effectifs très
+importants permettent de rejeter l'hypothèse d'indépendance, même si le lien
+entre lignes et colonnes du tableau observé semble très faible. 
+
+
 
 \section{Les résidus}
 \label{sec-residus}
@@ -1767,7 +1846,7 @@ indique si les écarts à l'indépendance sont significatifs à l'échelle
 du tableau, les résidus, eux, donnent cette indication à l'échelle de
 chaque cellule. Leur résultat est en fait très proche de ce que nous
 avons effectué dans la section \textit{Variations à l'échelle d'une
-  cellule}, \vpageref{secvarcel}. 
+  cellule}, \vpageref{secvarcel}.
 
 Dans cette section, nous avions tenté de voir comment on peut, par
 simulation, estimer si, à l'échelle d'une case, un écart entre un
@@ -1921,7 +2000,7 @@ l'échelle de la case\footnote{Il est dommage que certaines logiciels
   comme \textsf{Modalisa} ne proposent pas le calcul des résidus pour
   les tableaux croisés, même si dans ce cas l'utilisation du PEM
   (pourcentage de l'écart maximum) s'en rapproche
-  \cite{Cibois1993pem}.}. 
+  \cite{Cibois1993pem}.}.
 
 
 \paragraph{Représentation graphique}
@@ -2000,7 +2079,7 @@ trèfle à quatre feuilles, un fer à cheval ou aucun des deux~:
       \midrule
       Trèfle & 220 & 7  \\
       Fer & 200 & 1  \\
-      Aucun & 200 & 1 \\ 
+      Aucun & 200 & 1 \\
       \bottomrule
     \end{tabular}
   \end{center}
@@ -2047,12 +2126,12 @@ effectifs observés et effectifs théoriques, et les résidus~:
       \midrule
       Trèfle & 223,7 & 3,2  \\
       Fer & 198,1 & 2,9  \\
-      Aucun & 198,1 & 2,9 \\ 
+      Aucun & 198,1 & 2,9 \\
       \bottomrule\\
     \end{tabular}
     \textit{Effectifs théoriques}
   \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
   \begin{minipage}[c]{.3\linewidth}
     \footnotesize
@@ -2063,12 +2142,12 @@ effectifs observés et effectifs théoriques, et les résidus~:
       \midrule
       Trèfle & -3,8 & 3,8  \\
       Fer & 1,9 & -1,9  \\
-      Aucun & 1,9 & -1,9 \\ 
+      Aucun & 1,9 & -1,9 \\
       \bottomrule\\
     \end{tabular}
     \textit{Écarts}
     \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
   \begin{minipage}[c]{.3\linewidth}
     \footnotesize
@@ -2079,12 +2158,12 @@ effectifs observés et effectifs théoriques, et les résidus~:
       \midrule
       Trèfle & -0,3 & \textbf{2,1}  \\
       Fer & 0,1 & -1,1  \\
-      Aucun & 0,1 & -1,1 \\ 
+      Aucun & 0,1 & -1,1 \\
       \bottomrule\\
     \end{tabular}
     \textit{Résidus}
   \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
 \end{center}
 
@@ -2109,7 +2188,7 @@ Bien, et qu'est-ce qu'on fait alors~? On abandonne notre étude, empli
 de frustration et d'amertume, et quelque peu angoissé à l'idée
 d'expliquer tout ça à notre directeur de thèse qui était déjà en
 train de cocher ses numéros, un trèfle à quatre feuilles dans chaque
-main~? Et bien non~! 
+main~? Et bien non~!
 
 Comme nous l'avons évoqué précédemment, le fait d'utiliser une
 approximation mathématique pour évaluer le $p$ du test du \chid n'est
@@ -2172,7 +2251,7 @@ la couture au cours des douze derniers mois.
     \end{tabular}
   \end{center}
 \end{table}
- 
+
 Le \chid de ce tableau est très significatif, avec un $p$ quasiment
 égal à zéro. Le fait de pratiquer la broderie aurait donc une
 influence sur le fait de tenir un journal intime (ou inversement).
@@ -2200,7 +2279,7 @@ test en séparant les hommes et les femmes. On effectue deux test du
       \end{tabular}
       \textit{Hommes}
     \end{center}
-  \end{minipage} 
+  \end{minipage}
   \hfill
   \begin{minipage}[c]{.46\linewidth}
     \begin{center}
@@ -2247,7 +2326,7 @@ d'âge plus ou moins fines, etc.
 \label{sec-raffin}
 
 Nous détaillons ici des améliorations du test du \chid dont vous
-entendrez peut-être parler ou qui pourront vous être utiles. 
+entendrez peut-être parler ou qui pourront vous être utiles.
 
 \section{Le \texorpdfstring{$V$}{V} de Cramer}
 \label{sec-vcramer}
@@ -2265,7 +2344,7 @@ Harald Cramér\footnote{Penser à prononcer \og Crameur \fg{} et non
 $V$ et qui se calcule de la manière suivante~:
 
 
-$$V = \sqrt{\frac{\chi^2}{\text{Effectif total} \times \min ( 
+$$V = \sqrt{\frac{\chi^2}{\text{Effectif total} \times \min (
     \text{nombre de lignes} - 1, \text{nombre de colonnes} - 1)}} $$
 
 Cette formule compliquée s'applique de la manière suivante~: étant
@@ -2327,7 +2406,7 @@ Prenons comme d'habitude quelques exemples~:
     \end{tabular}
     $V=0$
   \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
   \begin{minipage}[c]{.3\linewidth}
     \footnotesize
@@ -2342,7 +2421,7 @@ Prenons comme d'habitude quelques exemples~:
     \end{tabular}
     $V=0,5$
     \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
   \begin{minipage}[c]{.3\linewidth}
     \footnotesize
@@ -2357,7 +2436,7 @@ Prenons comme d'habitude quelques exemples~:
     \end{tabular}
     $V=1$
   \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
 \end{center}
 
@@ -2387,7 +2466,7 @@ l'effectif total du tableau~:
     \end{tabular}
     $V=0,34$
   \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
   \begin{minipage}[c]{.3\linewidth}
     \footnotesize
@@ -2403,7 +2482,7 @@ l'effectif total du tableau~:
     \end{tabular}
     $V=0,34$
     \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
   \begin{minipage}[c]{.3\linewidth}
     \footnotesize
@@ -2419,7 +2498,7 @@ l'effectif total du tableau~:
     \end{tabular}
     $V=0,34$
   \end{center}
-\end{minipage} 
+\end{minipage}
   \hfill
 \end{center}
 
@@ -2507,15 +2586,20 @@ tableau~[\pageref{ssec-contrmar}]. On obtient ainsi le tableau des
 effectifs théoriques sous l'hypothèse
 d'indépendance~[\pageref{ssec-calctheo}].
 
-On calcule ensuite les écarts entre effectifs observés et effectifs
-théoriques et on les \og standardise \fg{} pour qu'ils soient tous
-positifs et \og comparables \fg{}~: on obtient ainsi le \chid partiel
-pour chaque case du tableau~[\pageref{ssec-chidpartiels}]. La somme de
-ces \chid partiels donne la valeur du \chid pour notre tableau. À
-partir de cette valeur et du nombre de degrés de libertés de notre
-tableau~[\pageref{ssec-ddl}], la statistique nous permet de déduire un $p$
-qui n'est autre que la probabilité d'obtenir le tableau croisé observé
-si nos variables étaient indépendantes~[\pageref{ssec-calcp}].
+On calcule ensuite les écarts entre effectifs observés et effectifs théoriques
+et on les \og standardise \fg{} pour qu'ils soient tous positifs et \og
+comparables \fg{}~: on obtient ainsi le \chid partiel pour chaque case du
+tableau~[\pageref{ssec-chidpartiels}]. La somme de ces \chid partiels donne la
+valeur du \chid pour notre tableau. Cette valeur est une mesure de la
+distance, ou de l'écart entre notre tableau observé et le tableau théorique
+calculé sous l'hypothèse d'indépendance des lignes et des colonnes.
+
+À partir de cette valeur et du nombre de degrés de libertés de notre
+tableau~[\pageref{ssec-ddl}], la statistique nous permet de déduire un $p$.
+Ce $p$ est la probabilité d'obtenir un écart au moins aussi grand entre notre
+tableau observé et le tableau théorique quand on se place sous l'hypothèse
+d'indépendance des lignes et des colonnes du tableau. C'est la seule
+interprétation réellement valide de la valeur du $p$.
 
 Le tableau~\vref{tab_valp} donne quelques exemples
 de valeurs de $p$ que l'on peut obtenir et de l'interprétation qui
@@ -2529,14 +2613,15 @@ peut en être faite~[\pageref{ssec-valp}].
       \midrule
       0,7 & On ne peut pas rejeter l'hypothèse d'indépendance.\\
       0,15 & En toute rigueur, on ne devrait pas rejeter l'hypothèse
-      d'indépendance. Mais il est possible que des effectifs plus
-      importants nous le permettrait.\\
-      0,05 & Les variables ne sont pas indépendantes au seuil classique de 5~\% \\
-      0,0001 & L'hypothèse d'indépendance doit être rejetée, il y a un
-      lien entre les deux variables \\
-      0 & L'hypothèse d'indépendance est tellement peu probable que le
-      logiciel n'arrive même pas à afficher tous les zéros derrière la
-      virgule. \\
+             d'indépendance. Mais il est possible que des effectifs plus
+             importants nous le permettrait.\\
+      0,05 & On ne peut rejeter l'hypothèse d'indépendance au seuil classique de 5~\% \\
+      0,0001 & L'hypothèse d'indépendance peut être rejetée, on peut
+               considérer qu'il y a un lien entre les lignes et les colonnes
+               du tableau\\
+      0 & L'écart entre tableau observé et tableau théorique est tellement
+          grand que le logiciel n'arrive même pas à afficher tous les zéros derrière la
+          virgule. \\
       \bottomrule
     \end{tabular}
     \caption{Exemples de valeur de $p$ et de son interprétation}
@@ -2561,9 +2646,11 @@ interprète le résultat du \chid~:
   sur le résultat et peut faire apparaître ou masquer des écarts à
   l'indépendance~[\pageref{ssec-modal}]~;
 \item la valeur du \chid et donc du $p$ est sensible à l'effectif
-  total du tableau~: un $p$ inférieur à 5~\% peut signifier que les
-  effectifs ne sont pas suffisamment important pour que le lien de
-  dépendance soit statistiquement avéré~[\pageref{ssec-depeff}]~;
+  total du tableau~: un $p$ supérieur à 5~\% peut signifier que les
+  effectifs ne sont pas suffisamment importants pour que le lien de
+  dépendance soit statistiquement avéré~[\pageref{ssec-depeff}]. À l'inverse,
+  avec des effectifs très élevés, le test peut être significatif même avec des
+  différences de pourcentages très faibles.
 \item le résultat du test n'est pas un indicateur de la force du lien
   entre les deux variables~[\pageref{sec-intdep}]~: comme la valeur du
   \chid et du $p$ dépendent des effectifs et des dimensions du
